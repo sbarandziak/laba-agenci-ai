@@ -1,47 +1,55 @@
-# Warsztat 0: Przygotowanie środowiska
+# Warsztat 0: Twój pierwszy klucz do AI
 
 > 📋 **Skopiuj i wklej do swojego AI coding assistanta:**
 > *"Przeczytaj plik W0_SETUP.md i pomóż mi przygotować środowisko. Sprawdź czy mam wszystko zainstalowane."*
+
+Za chwilę zrobisz coś, co do niedawna robili tylko programiści — **uzyskasz dostęp do prawdziwego modelu AI przez API**. To ten sam model który napędza Google Gemini. Ty będziesz go kontrolować kodem.
 
 ## Co potrzebujesz
 
 ### 1. Node.js (wymagane)
 
-Sprawdź czy masz — otwórz terminal i wpisz:
-```
-node --version
-```
+Node.js to program który pozwala uruchamiać aplikacje webowe na Twoim komputerze.
 
-- Widzisz `v18.x.x` lub wyżej → masz, idź dalej
-- Widzisz błąd → zainstaluj:
-  1. Wejdź na **nodejs.org**
-  2. Pobierz wersję **LTS** (duży zielony przycisk)
-  3. Zainstaluj (next → next → finish)
-  4. **Zamknij i otwórz terminal ponownie**
-  5. Sprawdź: `node --version`
+**Sprawdź czy masz:**
+1. Otwórz **terminal** (program do wpisywania komend):
+   - **Windows:** wciśnij `Win + R`, wpisz `cmd`, kliknij OK
+   - **Mac:** otwórz Spotlight (`Cmd + Spacja`), wpisz `Terminal`, Enter
+2. Wpisz: `node --version` i wciśnij Enter
 
-### 2. Klucz API Google AI Studio (wymagane, darmowe)
+**Widzisz** `v18.x.x` lub wyżej? → Masz Node.js, idź do kroku 2.
 
-1. Wejdź na **aistudio.google.com**
-2. Zaloguj się kontem Google
-3. Kliknij **"Get API Key"** → **"Create API key"**
-4. Skopiuj klucz i zapisz go w bezpiecznym miejscu
-5. **Nie udostępniaj klucza nikomu!**
+**Widzisz błąd?** → Zainstaluj:
+1. Otwórz przeglądarkę → wejdź na **nodejs.org**
+2. Kliknij duży zielony przycisk **LTS** (pobierze się plik instalacyjny)
+3. Otwórz pobrany plik → klikaj **Next → Next → Finish**
+4. **WAŻNE:** zamknij terminal i otwórz go ponownie
+5. Wpisz `node --version` — teraz powinno pokazać numer wersji
 
-### 3. AI coding assistant (jedno z poniższych)
+### 2. Klucz API Google AI Studio (wymagane, darmowe, bez karty)
+
+Klucz API to "hasło" które pozwala Twojej aplikacji rozmawiać z modelem AI Google.
+
+1. Otwórz przeglądarkę → wejdź na **aistudio.google.com**
+2. Zaloguj się kontem Google (tym samym co Gmail)
+3. Kliknij **"Get API Key"** (u góry strony)
+4. Kliknij **"Create API key"**
+5. Skopiuj klucz (długi ciąg znaków) i wklej go gdzieś do siebie — np. w Notatnik
+6. **Nie udostępniaj klucza nikomu!** To jak hasło do Twojego konta.
+
+### 3. AI coding assistant (jedno z poniższych — masz z wymagań kursu)
 
 | Narzędzie | Jak uruchomić |
 |-----------|---------------|
-| **Claude Code** | Terminal → wpisz `claude` → wskaż folder |
-| **Antigravity** | Otwórz folder w VS Code / Cursor z Antigravity |
-| **Codex (GitHub)** | github.com → Open in Codex → blank workspace |
+| **Claude Code** | Otwórz terminal → wpisz `claude` |
+| **Antigravity** | Otwórz VS Code lub Cursor → Antigravity jest wbudowany |
+| **Codex (GitHub)** | Otwórz github.com → kliknij "Open in Codex" |
 
 ### 4. Pliki warsztatowe (ten folder)
 
-Rozpakuj ZIP (lub sklonuj repo) do folderu na dysku, np:
-```
-C:\Users\TwojeImie\moj-agent\
-```
+Pobierz plik ZIP z materiałami (link od prowadzącego) i rozpakuj go:
+- **Windows:** kliknij prawym → "Wyodrębnij wszystkie"
+- **Mac:** kliknij dwukrotnie na ZIP
 
 ## Weryfikacja — poproś AI coding assistanta
 
@@ -76,13 +84,19 @@ Po tym kroku masz:
 
 Gdy chcesz wrócić do swojego agenta po zajęciach:
 
-```
-1. Otwórz terminal
-2. Wejdź do folderu projektu:    cd moj-agent
-3. Uruchom agenta:               npm run dev
-4. Otwórz przeglądarkę:          http://localhost:3000
-```
+1. Otwórz terminal (tak jak w kroku 1 powyżej)
+2. Wejdź do folderu projektu — wpisz i naciśnij Enter:
+   ```
+   cd moj-agent
+   ```
+   (`cd` = "change directory" — przechodzisz do folderu)
+3. Uruchom agenta:
+   ```
+   npm run dev
+   ```
+4. Otwórz przeglądarkę i wejdź na: **http://localhost:3000**
+5. Gotowe — Twój agent działa!
 
-Żeby zatrzymać agenta: `Ctrl + C` w terminalu.
+**Zatrzymanie agenta:** wciśnij `Ctrl + C` w terminalu.
 
-Żeby uruchomić ponownie — powtórz krok 3.
+**Ponowne uruchomienie:** powtórz kroki 1-4.
