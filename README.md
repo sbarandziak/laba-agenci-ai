@@ -24,6 +24,7 @@ Materiały do kursu "Budowanie Agentów AI" (Laba).
 
 ```
 lekcja_01/          ← Od LLM do agenta
+  W0_SETUP.md       — Przygotowanie środowiska (Node.js, klucz API)
   W1_CHATBOT.md     — Zbuduj chatbota AI od zera
   W2_PERSONA.md     — Nadaj agentowi osobowość
   W3_TRYBY.md       — Dodaj tryby rozmowy
