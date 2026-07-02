@@ -14,9 +14,10 @@ Materiały do kursu "Budowanie Agentów AI" (Laba).
 - **Node.js** — [nodejs.org](https://nodejs.org) (wersja 18+)
 - **Klucz API Google AI Studio** — [aistudio.google.com](https://aistudio.google.com) → Get API Key (darmowy!)
 - **AI coding assistant** — jedno z:
-  - Codex (GitHub)
-  - Claude Code (terminal)
-  - Antigravity (IDE)
+  - Codex (ChatGPT Plus / PRO)
+  - Claude Code (Claude PRO / MAX)
+  - Antigravity (Google AI PRO / ULTRA)
+  - Cursor (tylko dla zaawansowanych)
 
 **Nie potrzebujesz:** Pythona, Gita, GitHuba, VS Code.
 
