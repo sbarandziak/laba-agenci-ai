@@ -1,64 +1,43 @@
-# Agenci AI — Kurs praktyczny
+# AI Agents — Warsztaty
 
-> 12 lekcji. Jeden agent. Od zera do produkcji.
+Materiały do kursu "Budowanie Agentów AI" (Laba).
 
-## O kursie
+## Jak używać
 
-Przez 12 lekcji (2 razy w tygodniu) budujesz jednego agenta AI od prostego chatbota do w pełni autonomicznego systemu wdrożonego w chmurze. Nie osobne demo co lekcji — jeden spójny projekt, który rośnie z Tobą.
-
-**Prowadzący:** Paweł Paruzel — CEO Syntelligence, 17+ lat w IT, 7 produktów SaaS, 25 certyfikatów DeepLearning.AI
-
-## Szybki start
-
-```bash
-# 1. Sklonuj repo (lub pobierz ZIP z GitHub → Code → Download ZIP)
-git clone https://github.com/SirIdontCare/laba-agenci-ai.git
-cd laba-agenci-ai
-
-# 2. Utwórz virtual environment
-python -m venv .venv
-
-# Windows:
-.venv\Scripts\activate
-# Mac/Linux:
-source .venv/bin/activate
-
-# 3. Zainstaluj zależności
-pip install -r requirements.txt
-
-# 4. Skopiuj klucze API
-cp lekcja_01/.env.example .env
-# Edytuj .env — wpisz swoje klucze
-
-# 5. Uruchom pierwszy skrypt
-cd lekcja_01
-python 01_hello.py
-```
-
-
+1. Pobierz ten folder (ZIP)
+2. Otwórz go w swoim AI coding assistant (Codex / Claude Code / Antigravity)
+3. Powiedz AI: **"Przeczytaj plik lekcja_01/W1_CHATBOT.md i zbuduj to co jest opisane"**
+4. Testuj, baw się, eksperymentuj
 
 ## Wymagania
 
-- Python 3.11+
-- Git
-- VS Code
-- AI coding assistant (jedno z): Claude Code / Cursor / GitHub Copilot
-- Konta API: min. Google (darmowy) + OpenAI lub Anthropic
+- **Node.js** — [nodejs.org](https://nodejs.org) (wersja 18+)
+- **Klucz API Google AI Studio** — [aistudio.google.com](https://aistudio.google.com) → Get API Key (darmowy!)
+- **AI coding assistant** — jedno z:
+  - Codex (GitHub)
+  - Claude Code (terminal)
+  - Antigravity (IDE)
 
-## Klucze API — skąd wziąć?
+**Nie potrzebujesz:** Pythona, Gita, GitHuba, VS Code.
 
-| Dostawca | Link | Cena |
-|----------|------|------|
-| **Google (Gemini)** | [aistudio.google.com](https://aistudio.google.com/apikey) | **Darmowy** |
-| OpenAI | [platform.openai.com](https://platform.openai.com/api-keys) | Pay-as-you-go |
-| Anthropic | [console.anthropic.com](https://console.anthropic.com/settings/keys) | Pay-as-you-go |
-| xAI (Grok) | [console.x.ai](https://console.x.ai/) | Pay-as-you-go |
-| DeepSeek | [platform.deepseek.com](https://platform.deepseek.com/api_keys) | Pay-as-you-go |
-| Mistral | [console.mistral.ai](https://console.mistral.ai/api-keys) | Pay-as-you-go |
-| **OpenRouter** | [openrouter.ai](https://openrouter.ai/keys) | Pay-as-you-go (wielu dostawców w jednym kluczu!) |
+## Struktura
 
+```
+lekcja_01/          ← Od LLM do agenta
+  W1_CHATBOT.md     — Zbuduj chatbota AI od zera
+  W2_PERSONA.md     — Nadaj agentowi osobowość
+  W3_TRYBY.md       — Dodaj tryby rozmowy
+  W4_PAMIEC.md      — Pamięć + eksport rozmowy
 
+lekcja_02/          ← Inżynieria promptów
+  W1_PERSONA_PRO.md — Profesjonalny prompt + przełącznik modeli
+  W2_CHAIN_OF_THOUGHT.md — Myślenie krok po kroku
+  W3_FEW_SHOT.md    — Słownik AI (few-shot prompting)
+  W4_FORMATOWANIE.md — Komendy /tabela /lista /email
+```
 
-## Licencja
+## Zasady
 
-Materiały kursu — wszelkie prawa zastrzeżone © 2026 Paweł Paruzel / Syntelligence
+- **Nie pisz kodu ręcznie** — opisz AI czego chcesz
+- **Eksperymentuj** — zmień prompt, dodaj coś od siebie
+- **Pytaj na czacie kursu** jeśli coś nie działa

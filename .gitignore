@@ -1,41 +1,8 @@
-# ── Klucze API — NIGDY nie commituj! ──
+node_modules/
 .env
-
-# ── Python ──
-__pycache__/
-*.py[cod]
-*$py.class
-*.egg-info/
-dist/
-build/
-.eggs/
-
-# ── Virtual environment ──
+.env.local
+.next/
 .venv/
-venv/
-env/
-
-# ── IDE ──
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# ── OS ──
+__pycache__/
+*.pyc
 .DS_Store
-Thumbs.db
-desktop.ini
-
-# ── Docker ──
-docker-compose.override.yml
-
-# ── Dane lokalne ──
-*.db
-*.sqlite
-chroma_data/
-qdrant_data/
-
-# ── Notatki prowadzącego (nie dla kursantów) ──
-LEKCJA_*_NOTATKI.md
-KOMPENDIUM_*.md
