@@ -69,3 +69,20 @@ Po tym kroku masz:
 - ✅ AI coding assistant gotowy do pracy
 
 **Jeśli masz to wszystko → przejdź do W1_CHATBOT.md**
+
+---
+
+## Jak samodzielnie uruchomić agenta (po warsztatach)
+
+Gdy chcesz wrócić do swojego agenta po zajęciach:
+
+```
+1. Otwórz terminal
+2. Wejdź do folderu projektu:    cd moj-agent
+3. Uruchom agenta:               npm run dev
+4. Otwórz przeglądarkę:          http://localhost:3000
+```
+
+Żeby zatrzymać agenta: `Ctrl + C` w terminalu.
+
+Żeby uruchomić ponownie — powtórz krok 3.

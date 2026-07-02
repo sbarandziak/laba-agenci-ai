@@ -37,6 +37,17 @@ lekcja_02/          ← Inżynieria promptów
   W4_FORMATOWANIE.md — Komendy /tabela /lista /email
 ```
 
+## Jak uruchomić agenta
+
+Po zbudowaniu projektu na warsztatach:
+```
+cd moj-agent
+npm run dev
+```
+Otwórz **http://localhost:3000** w przeglądarce. Gotowe.
+
+Zatrzymanie: `Ctrl + C`. Ponowne uruchomienie: `npm run dev`.
+
 ## Zasady
 
 - **Nie pisz kodu ręcznie** — opisz AI czego chcesz
