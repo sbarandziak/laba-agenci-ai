@@ -1,4 +1,4 @@
-# Warsztat 4: Agent z pamięcią konwersacji
+﻿# Warsztat 4: Agent z pamięcią konwersacji
 
 > 📋 **Skopiuj i wklej do AI assistanta:**
 > *"Przeczytaj plik W4_PAMIEC.md i dodaj pamięć konwersacji do mojego chatbota"*
@@ -13,7 +13,7 @@ Agent pamięta wcześniejsze wiadomości w rozmowie. Nawiązuje do tego co powie
 W `app/page.tsx` dodaj nad czatem sekcję "Kontekst rozmowy":
 
 - Mały panel (zwijany) pokazujący ile wiadomości jest w konwersacji
-- Przycisk "🗑 Nowa rozmowa" — czyści historię
+- Przycisk "🗑 Nowa rozmowa" - czyści historię
 - Licznik: "Wiadomości: X | ~Tokeny: Y" (przybliżony licznik: ilość znaków / 4)
 
 ### 2. Ulepszony system prompt z instrukcją pamięci
@@ -24,9 +24,9 @@ W API dodaj do system prompta sekcję o pamięci:
 ## PAMIĘĆ
 - Pamiętasz CAŁĄ rozmowę od początku
 - Nawiązuj do wcześniejszych wiadomości gdy to istotne
-- Jeśli użytkownik zmienia temat — zaakceptuj, ale możesz nawiązać do wcześniejszego
-- Gdy użytkownik powie "podsumuj" — streszczenie CAŁEJ rozmowy w punktach
-- Zwracaj się do użytkownika konsekwentnie (jeśli podał imię — używaj go)
+- Jeśli użytkownik zmienia temat - zaakceptuj, ale możesz nawiązać do wcześniejszego
+- Gdy użytkownik powie "podsumuj" - streszczenie CAŁEJ rozmowy w punktach
+- Zwracaj się do użytkownika konsekwentnie (jeśli podał imię - używaj go)
 ```
 
 ### 3. Komenda "podsumuj"
@@ -59,6 +59,6 @@ W interfejsie dodaj przycisk "📋 Eksportuj rozmowę" który:
 
 1. "Cześć, mam na imię Anna" → agent powinien użyć imienia
 2. "Interesuję się marketingiem" → agent odpowiada w temacie
-3. "Wracając do mojego imienia — pamiętasz je?" → powinien powiedzieć "Anna"
+3. "Wracając do mojego imienia - pamiętasz je?" → powinien powiedzieć "Anna"
 4. "Podsumuj naszą rozmowę" → streszczenie w punktach
 5. Kliknij "Eksportuj" → sprawdź schowek

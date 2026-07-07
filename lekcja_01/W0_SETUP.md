@@ -1,9 +1,9 @@
-# Warsztat 0: Twój pierwszy klucz do AI
+﻿# Warsztat 0: Twój pierwszy klucz do AI
 
 > 📋 **Skopiuj i wklej do swojego AI coding assistanta:**
 > *"Przeczytaj plik W0_SETUP.md i pomóż mi przygotować środowisko. Sprawdź czy mam wszystko zainstalowane."*
 
-Za chwilę zrobisz coś, co do niedawna robili tylko programiści — **uzyskasz dostęp do prawdziwego modelu AI przez API**. To ten sam model który napędza Google Gemini. Ty będziesz go kontrolować kodem.
+Za chwilę zrobisz coś, co do niedawna robili tylko programiści - **uzyskasz dostęp do prawdziwego modelu AI przez API**. To ten sam model który napędza Google Gemini. Ty będziesz go kontrolować kodem.
 
 ## Co potrzebujesz
 
@@ -24,7 +24,7 @@ Node.js to program który pozwala uruchamiać aplikacje webowe na Twoim komputer
 2. Kliknij duży zielony przycisk **LTS** (pobierze się plik instalacyjny)
 3. Otwórz pobrany plik → klikaj **Next → Next → Finish**
 4. **WAŻNE:** zamknij terminal i otwórz go ponownie
-5. Wpisz `node --version` — teraz powinno pokazać numer wersji
+5. Wpisz `node --version` - teraz powinno pokazać numer wersji
 
 ### 2. Klucz API Google AI Studio (wymagane, darmowe, bez karty)
 
@@ -34,10 +34,10 @@ Klucz API to "hasło" które pozwala Twojej aplikacji rozmawiać z modelem AI Go
 2. Zaloguj się kontem Google (tym samym co Gmail)
 3. Kliknij **"Get API Key"** (u góry strony)
 4. Kliknij **"Create API key"**
-5. Skopiuj klucz (długi ciąg znaków) i wklej go gdzieś do siebie — np. w Notatnik
+5. Skopiuj klucz (długi ciąg znaków) i wklej go gdzieś do siebie - np. w Notatnik
 6. **Nie udostępniaj klucza nikomu!** To jak hasło do Twojego konta.
 
-### 3. AI coding assistant (jedno z poniższych — masz z wymagań kursu)
+### 3. AI coding assistant (jedno z poniższych - masz z wymagań kursu)
 
 | Narzędzie | Jak uruchomić |
 |-----------|---------------|
@@ -51,7 +51,7 @@ Pobierz plik ZIP z materiałami (link od prowadzącego) i rozpakuj go:
 - **Windows:** kliknij prawym → "Wyodrębnij wszystkie"
 - **Mac:** kliknij dwukrotnie na ZIP
 
-## Weryfikacja — poproś AI coding assistanta
+## Weryfikacja - poproś AI coding assistanta
 
 Wklej ten prompt do swojego AI assistanta:
 
@@ -65,7 +65,7 @@ Sprawdź moje środowisko:
 6. Stwórz plik .env.local z treścią: GOOGLE_GENERATIVE_AI_API_KEY=tutaj_wklej_klucz
 7. Powiedz mi czy wszystko się zainstalowało poprawnie
 
-Jeśli coś nie działa — powiedz mi co zrobić.
+Jeśli coś nie działa - powiedz mi co zrobić.
 ```
 
 ## Oczekiwany rezultat
@@ -85,17 +85,17 @@ Po tym kroku masz:
 Gdy chcesz wrócić do swojego agenta po zajęciach:
 
 1. Otwórz terminal (tak jak w kroku 1 powyżej)
-2. Wejdź do folderu projektu — wpisz i naciśnij Enter:
+2. Wejdź do folderu projektu - wpisz i naciśnij Enter:
    ```
    cd moj-agent
    ```
-   (`cd` = "change directory" — przechodzisz do folderu)
+   (`cd` = "change directory" - przechodzisz do folderu)
 3. Uruchom agenta:
    ```
    npm run dev
    ```
 4. Otwórz przeglądarkę i wejdź na: **http://localhost:3000**
-5. Gotowe — Twój agent działa!
+5. Gotowe - Twój agent działa!
 
 **Zatrzymanie agenta:** wciśnij `Ctrl + C` w terminalu.
 

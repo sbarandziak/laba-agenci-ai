@@ -1,13 +1,13 @@
-# Warsztat 2: Nadaj agentowi osobowość
+﻿# Warsztat 2: Nadaj agentowi osobowość
 
 > 📋 **Skopiuj i wklej do AI assistanta:**
 > *"Przeczytaj plik W2_PERSONA.md i zmodyfikuj mojego chatbota zgodnie z opisem"*
 
 ## Cel
-Twój chatbot ma dostać unikalną tożsamość — imię, rolę i styl odpowiedzi.
+Twój chatbot ma dostać unikalną tożsamość - imię, rolę i styl odpowiedzi.
 
 ## Co zmieniamy
-Plik: `app/api/chat/route.ts` — system prompt
+Plik: `app/api/chat/route.ts` - system prompt
 
 ## Wybierz rolę agenta (jedną)
 - 📊 Specjalista ds. HR / kadr
@@ -20,7 +20,7 @@ Plik: `app/api/chat/route.ts` — system prompt
 - 📚 Korepetytor / tutor (matematyka, angielski, etc.)
 - **Lub wymyśl własną z Twojej branży**
 
-## Nowy system prompt — szablon
+## Nowy system prompt - szablon
 
 Zmień system prompt w API na ten format (dostosuj do swojej roli):
 

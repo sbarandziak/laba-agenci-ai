@@ -1,10 +1,10 @@
-# Warsztat 3: Dodaj tryby rozmowy
+﻿# Warsztat 3: Dodaj tryby rozmowy
 
 > 📋 **Skopiuj i wklej do AI assistanta:**
 > *"Przeczytaj plik W3_TRYBY.md i dodaj przełącznik trybów do mojego chatbota"*
 
 ## Cel
-Agent ma 3 tryby: Casual, Ekspert, Kreatywny. Użytkownik przełącza tryb w interfejsie — agent zmienia styl odpowiedzi.
+Agent ma 3 tryby: Casual, Ekspert, Kreatywny. Użytkownik przełącza tryb w interfejsie - agent zmienia styl odpowiedzi.
 
 ## Co budujemy
 
@@ -17,7 +17,7 @@ Stwórz obiekt z trzema wariantami system prompta. Bazuj na personie z Warsztatu
 ```
 CASUAL:
 "[Persona z W2]. Odpowiadaj luźno, jak do kolegi. Skróty myślowe OK.
-Emoji dozwolone. Krótko — max 2 zdania na punkt. Możesz żartować."
+Emoji dozwolone. Krótko - max 2 zdania na punkt. Możesz żartować."
 
 EKSPERT:
 "[Persona z W2]. Odpowiadaj formalnie i szczegółowo.
@@ -47,9 +47,9 @@ Kliknięcie zmienia aktywny tryb. Aktywny przycisk ma wyróżniony styl (np. kol
 ### 4. Wizualne rozróżnienie
 
 Przy wiadomości AI pokaż mały badge z aktualnym trybem, np.:
-- `💬 casual` — szary badge
-- `🎓 ekspert` — niebieski badge  
-- `🎨 kreatywny` — fioletowy badge
+- `💬 casual` - szary badge
+- `🎓 ekspert` - niebieski badge  
+- `🎨 kreatywny` - fioletowy badge
 
 ## Oczekiwany rezultat
 

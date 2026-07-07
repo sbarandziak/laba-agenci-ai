@@ -1,4 +1,4 @@
-# Warsztat 1: Zbuduj chatbota AI od zera
+﻿# Warsztat 1: Zbuduj chatbota AI od zera
 
 > 📋 **Skopiuj i wklej do swojego AI coding assistanta:**
 > *"Przeczytaj plik W1_CHATBOT.md i zbuduj wszystko co jest opisane w sekcji Krok po kroku. Mój klucz API Google: [WKLEJ KLUCZ]"*

@@ -1,10 +1,10 @@
-# Warsztat 4: Wymuszanie formatu — tabele, listy, markdown
+﻿# Warsztat 4: Wymuszanie formatu - tabele, listy, markdown
 
 > 📋 **Skopiuj i wklej do AI assistanta:**
 > *"Przeczytaj plik W4_FORMATOWANIE.md i dodaj komendy formatujące do mojego agenta"*
 
 ## Cel
-Agent odpowiada w DOKŁADNYM formacie: tabela, lista, porównanie — na żądanie użytkownika.
+Agent odpowiada w DOKŁADNYM formacie: tabela, lista, porównanie - na żądanie użytkownika.
 
 ## Co budujemy
 
@@ -17,29 +17,29 @@ Jesteś asystentem który formatuje odpowiedzi według instrukcji użytkownika.
 
 Rozpoznajesz komendy formatu na początku wiadomości:
 
-/tabela [temat] — odpowiedz w formie tabeli markdown
+/tabela [temat] - odpowiedz w formie tabeli markdown
   Kolumny dobierz do tematu. Minimum 3 kolumny, 5 wierszy.
   Przykład: /tabela porównanie frameworków JavaScript
 
-/lista [temat] — odpowiedz jako lista numerowana z opisami
+/lista [temat] - odpowiedz jako lista numerowana z opisami
   Każdy punkt: numer + nagłówek (bold) + 1 zdanie opisu
   Przykład: /lista 10 zasad dobrego kodu
 
-/porownanie [A] vs [B] — tabela porównawcza dwóch rzeczy
+/porownanie [A] vs [B] - tabela porównawcza dwóch rzeczy
   Kolumny: Aspekt | [A] | [B] | Werdykt
   Minimum 6 aspektów + wiersz podsumowania
   Przykład: /porownanie React vs Vue
 
-/faq [temat] — lista pytań i odpowiedzi
+/faq [temat] - lista pytań i odpowiedzi
   Format: **Q:** pytanie (bold) → **A:** odpowiedź
   Minimum 5 par Q&A
   Przykład: /faq praca zdalna
 
-/email [opis] — napisz profesjonalny email
+/email [opis] - napisz profesjonalny email
   Format: Temat | Od/Do | Treść | Podpis
   Przykład: /email prośba o urlop na 2 tygodnie
 
-Jeśli wiadomość NIE zaczyna się od komendy — odpowiadaj normalnie, 
+Jeśli wiadomość NIE zaczyna się od komendy - odpowiadaj normalnie, 
 ale w czystym, czytelnym markdown.
 
 ZAWSZE formatuj w markdown (nagłówki, pogrubienia, tabele, listy).
@@ -49,7 +49,7 @@ ZAWSZE formatuj w markdown (nagłówki, pogrubienia, tabele, listy).
 
 Interfejs czatu z:
 - Nagłówek: "📐 Formatowanie"
-- Podtytuł: "Agent odpowiada w tabeli, liście, porównaniu — na żądanie"
+- Podtytuł: "Agent odpowiada w tabeli, liście, porównaniu - na żądanie"
 - Klikalne przyciski komend (zamiast pustego pola):
   - `/tabela języki programowania 2026`
   - `/porownanie ChatGPT vs Claude`
@@ -80,4 +80,4 @@ Dodaj "📐 Formater" do nawigacji.
 5. Normalne pytanie bez komendy → zwykła odpowiedź w markdown
 
 ## Dlaczego to jest ważne
-Formatowanie to nie kosmetyka. W pracy z AI format odpowiedzi decyduje o użyteczności. Tabela którą można wkleić do Excela, email który można wysłać, FAQ na stronę — to są NARZĘDZIA, nie zabawki.
+Formatowanie to nie kosmetyka. W pracy z AI format odpowiedzi decyduje o użyteczności. Tabela którą można wkleić do Excela, email który można wysłać, FAQ na stronę - to są NARZĘDZIA, nie zabawki.

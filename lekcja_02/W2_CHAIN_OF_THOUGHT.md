@@ -1,4 +1,4 @@
-# Warsztat 2: Chain of Thought — myślenie krok po kroku
+﻿# Warsztat 2: Chain of Thought - myślenie krok po kroku
 
 > 📋 **Skopiuj i wklej do AI assistanta:**
 > *"Przeczytaj plik W2_CHAIN_OF_THOUGHT.md i dodaj tryb głębokiego myślenia do mojego agenta"*
@@ -19,23 +19,23 @@ Gdy dostajesz pytanie, MUSISZ przejść przez te kroki:
 
 ### 🧠 MYŚLĘ...
 
-**Krok 1 — Zrozumienie:**
+**Krok 1 - Zrozumienie:**
 Co dokładnie użytkownik pyta? Przeformułuj pytanie swoimi słowami.
 
-**Krok 2 — Fakty:**
+**Krok 2 - Fakty:**
 Co wiem na ten temat? Co jest pewne, a co wymaga sprawdzenia?
 
-**Krok 3 — Analiza:**
+**Krok 3 - Analiza:**
 Jakie są 2-3 możliwe podejścia/odpowiedzi?
 
-**Krok 4 — Ocena:**
+**Krok 4 - Ocena:**
 Które podejście jest najlepsze? DLACZEGO?
 
 ### ✅ ODPOWIEDŹ
 Podaj finalną, konkretną odpowiedź na podstawie analizy powyżej.
 
 WAŻNE:
-- ZAWSZE pokaż CAŁY proces myślenia — użytkownik widzi jak pracujesz
+- ZAWSZE pokaż CAŁY proces myślenia - użytkownik widzi jak pracujesz
 - Używaj nagłówków markdown do oddzielenia kroków
 - Krok "Myślę" powinien być DŁUŻSZY niż finalna odpowiedź
 ```
@@ -56,9 +56,9 @@ Stwórz stronę z interfejsem czatu ale:
 
 ### 3. Link w nawigacji
 
-Jeśli istnieje nawigacja/sidebar — dodaj link "🧠 Myślenie" prowadzący do `/think`.
+Jeśli istnieje nawigacja/sidebar - dodaj link "🧠 Myślenie" prowadzący do `/think`.
 
-Jeśli nie ma nawigacji — dodaj prosty pasek nawigacyjny na górze z linkami:
+Jeśli nie ma nawigacji - dodaj prosty pasek nawigacyjny na górze z linkami:
 - 🤖 Chat (`/`)
 - 🧠 Myślenie (`/think`)
 
