@@ -6,6 +6,9 @@
 ## Cel
 Zbuduj "centrum dowodzenia" — stronę startową która automatycznie ładuje prawdziwe dane: pogodę, kursy walut, nadchodzące święta. Profesjonalny produkt, nie prototyp.
 
+## Kontekst
+Po Warsztatach 1-3 masz agenta z 10 narzędziami, stroną ReAct (/react), asystentem podróży (/travel) i error handling. Teraz zamykamy to wszystko w profesjonalnym dashboardzie.
+
 ## Co budujemy
 
 ### 1. Strona: `app/dashboard/page.tsx`
@@ -19,8 +22,12 @@ Przy ładowaniu strony automatycznie pobierz dane:
 3. getHolidays("PL", 2026) → filtruj na nadchodzące
 4. currentDateTime → data, dzień tygodnia
 
-Dane pobieraj bezpośrednio z API (fetch w server component 
+Dane pobieraj bezpośrednio z API (fetch w server component
 lub useEffect) — NIE przez agenta, żeby było szybko.
+Użyj tych samych URL-i co w narzędziach z Warsztatu 1:
+- Open-Meteo: https://api.open-meteo.com/v1/forecast?...
+- NBP: https://api.nbp.pl/api/exchangerates/rates/a/EUR/?format=json
+- Nager.Date: https://date.nager.at/api/v3/publicholidays/2026/PL
 
 Layout:
 
@@ -37,11 +44,11 @@ Layout:
 │ 📅 NADCHODZĄCE ŚWIĘTA│ 🤖 SZYBKIE AKCJE          │
 │                      │                           │
 │ 15 sie — Wniebowzię- │ [🌍 Zaplanuj podróż]     │
-│         cie NMP      │ [📊 Porównaj waluty]      │
-│ 1 lis — Wszystkich   │ [🔄 Agent ReAct]          │
-│         Świętych     │ [💬 Chat z agentem]       │
-│ 11 lis — Niepodległo-│ [🧠 Tryb myślenia]       │
-│          ści         │ [📖 Słownik AI]           │
+│         cie NMP      │ [🔄 Agent ReAct]          │
+│ 1 lis — Wszystkich   │ [💬 Chat z agentem]       │
+│         Świętych     │ [🧠 Tryb myślenia]       │
+│ 11 lis — Niepodległo-│ [🎨 Generator grafik]     │
+│          ści         │ [📚 Słownik AI]           │
 │                      │                           │
 │ Następne za: 40 dni  │                           │
 └──────────────────────┴───────────────────────────┘
@@ -54,10 +61,10 @@ nie hardcoded!
 
 ```
 - Ciemny motyw (spójny z resztą)
-- Karty z glassmorphism (backdrop-filter: blur, 
+- Karty z glassmorphism (backdrop-filter: blur,
   delikatny border, półprzezroczyste tło)
 - Animacja fade-in kart (opacity 0→1, translate-y)
-- Loading skeleton gdy dane się ładują 
+- Loading skeleton gdy dane się ładują
   (szare pulsujące placeholdery)
 - Responsywny: na telefonie karty jedna pod drugą
 - Ikona odświeżania w prawym górnym rogu → przeładowuje dane
@@ -72,13 +79,13 @@ Kolory kart:
 ### 3. Szybkie akcje → otwierają odpowiednią stronę
 
 ```
-Przyciski "Szybkie akcje":
+Przyciski "Szybkie akcje" — linkuj TYLKO do stron które istnieją:
 - 🌍 Zaplanuj podróż → /travel
-- 📊 Porównaj waluty → /react z promptem "Porównaj kursy EUR, USD, GBP, CHF"
 - 🔄 Agent ReAct → /react
-- 💬 Chat z agentem → /chat lub /
+- 💬 Chat z agentem → / (strona główna z czatem)
 - 🧠 Tryb myślenia → /think
-- 📖 Słownik AI → /fewshot
+- 🎨 Generator grafik → /generate
+- 📚 Słownik AI → /fewshot
 
 Każdy przycisk to link do odpowiedniej strony.
 ```
@@ -97,14 +104,16 @@ Każdy przycisk to link do odpowiedniej strony.
 ```
 Zmień routing:
 - / → Dashboard (strona startowa)
-- /chat → Chat z personą
-- /think → Chain of Thought
-- /search → Wyszukiwarka Google
-- /extract → Analizator dokumentów
-- /format → Formatowanie
-- /agent → Agent multi-tool
-- /react → Agent ReAct
-- /travel → Asystent podróży
+- /chat → Chat z personą (przenieś obecną stronę główną)
+- /think → Chain of Thought (z L2)
+- /fewshot → Słownik AI (z L2)
+- /format → Formatowanie (z L2)
+- /search → Wyszukiwarka Google (z L3)
+- /generate → Generator grafik (z L3)
+- /vision → Analiza obrazów (z L3)
+- /agent → Agent multi-tool (z L3)
+- /react → Agent ReAct (z L4 W1)
+- /travel → Asystent podróży (z L4 W2)
 
 Nawigacja powinna być:
 - Sidebar na desktopie (zawsze widoczny)
@@ -126,30 +135,32 @@ Nawigacja powinna być:
 2. Sprawdź pogodę na telefonie → ta sama temperatura co na dashboardzie
 3. Sprawdź kurs euro w banku → ten sam co na dashboardzie (NBP)
 4. Kliknij "Zaplanuj podróż" → przenosi do /travel
-5. Kliknij 🔄 → dane się odświeżają
-6. Otwórz na telefonie → responsywny layout
+5. Kliknij "Agent ReAct" → przenosi do /react
+6. Kliknij "Generator grafik" → przenosi do /generate
+7. Kliknij 🔄 → dane się odświeżają
+8. Otwórz na telefonie → responsywny layout
 
-## Podsumowanie Lekcji 3 i 4
+## Podsumowanie Lekcji 4
 
 Po tych warsztatach masz:
-- ✅ **9 prawdziwych narzędzi** (kalkulator, czas, Google Search, pogoda, waluty, święta, Wikipedia, czytanie stron, notatki)
+- ✅ **10 narzędzi** (readWebPage i generateImage z L3 + 8 nowych: calculator, currentDateTime, getWeather, getExchangeRate, getHolidays, searchWikipedia, saveNote, getNotes)
 - ✅ **Agent ReAct** który autonomicznie planuje i realizuje cele
 - ✅ **Asystent podróży** który planuje wyjazdy z prawdziwymi danymi
-- ✅ **Error handling** i zabezpieczenia
+- ✅ **Error handling** i zabezpieczenia z panelem diagnostycznym
 - ✅ **Dashboard** z live data — pogoda, waluty, święta
-- ✅ **Pełna nawigacja** z 9 stronami
+- ✅ **Pełna nawigacja** z 11 stronami
 
 **Żadnych mocków. Żadnych dodatkowych kluczy. Wszystko prawdziwe.**
 
-Twój agent przeszedł drogę od "Cześć, kim jesteś?" do autonomicznego asystenta który sprawdza prawdziwą pogodę, przelicza prawdziwe kursy walut, i planuje prawdziwe podróże.
+Twój agent przeszedł drogę od "Cześć, kim jesteś?" do centrum dowodzenia z 10 narzędziami i prawdziwymi danymi.
 
 ## Praca domowa
 
-1. **Nowe miasto na dashboardzie** — zmień domyślne miasto pogodowe 
+1. **Nowe miasto na dashboardzie** — zmień domyślne miasto pogodowe
    na swoje (lub dodaj wybór miasta)
-2. **Nowa waluta** — dodaj trzecią walutę do dashboardu 
+2. **Nowa waluta** — dodaj trzecią walutę do dashboardu
    (np. GBP, CHF, CZK)
-3. **Test z rodziną** — pokaż dashboard i asystenta podróży 
+3. **Test z rodziną** — pokaż dashboard i asystenta podróży
    komuś spoza IT. Zapisz reakcję.
-4. **BONUS:** Dodaj do dashboardu kartę "Cytat dnia" 
+4. **BONUS:** Dodaj do dashboardu kartę "Cytat dnia"
    z darmowego API (api.quotable.io lub podobne)
