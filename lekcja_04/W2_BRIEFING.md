@@ -7,9 +7,13 @@
 Agent ReAct jako asystent podróży — planuje wyjazdy używając prawdziwych danych: pogoda, waluty, święta, informacje o miastach. Scenariusz który każdy rozumie i może przetestować.
 
 ## Kontekst
+W Warsztacie 1 dodaliśmy agentowi 8 nowych narzędzi (pogoda, waluty, święta, Wikipedia, kalkulator, czas, notatki) i zbudowaliśmy agenta ReAct na stronie /react.
+
+Teraz budujemy SPECJALIZOWANĄ wersję tego agenta — asystenta podróży. Ten sam zestaw narzędzi, ale system prompt wyspecjalizowany w planowaniu podróży.
+
 "Lecę do Berlina w piątek. Sprawdź pogodę, kurs euro, czy są święta w Niemczech, i co warto zobaczyć."
 
-Jeden prompt → agent autonomicznie zbiera PRAWDZIWE dane z 4-5 źródeł → zwraca gotowy plan podróży. To jest scenariusz który imponuje.
+Jeden prompt → agent autonomicznie zbiera PRAWDZIWE dane z 4-5 źródeł → zwraca gotowy plan podróży.
 
 ## Co budujemy
 
@@ -18,12 +22,12 @@ Jeden prompt → agent autonomicznie zbiera PRAWDZIWE dane z 4-5 źródeł → z
 ```
 Stwórz endpoint z wyspecjalizowanym system promptem dla podróży:
 
-Model: gemini-2.5-flash z useSearchGrounding: true
+Model: gemini-3.1-flash-lite z useSearchGrounding sterowanym zmienną ENABLE_SEARCH_GROUNDING (domyślnie wyłączony — patrz L03 W1)
 maxSteps: 10
-Wszystkie narzędzia z L3
+Wszystkie narzędzia z Warsztatu 1 (te same tools co w /api/react)
 
 System prompt:
-"Jesteś profesjonalnym asystentem podróży. Gdy użytkownik opisuje 
+"Jesteś profesjonalnym asystentem podróży. Gdy użytkownik opisuje
 planowaną podróż, AUTONOMICZNIE zbierasz wszystkie potrzebne informacje.
 
 ## TWÓJ PROCES:

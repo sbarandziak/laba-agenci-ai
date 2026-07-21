@@ -7,14 +7,15 @@
 Agent musi być bezpieczny — nie może działać w nieskończoność, musi radzić sobie z błędami API, i musi informować użytkownika co poszło nie tak.
 
 ## Kontekst
-Prawdziwe API czasem nie odpowiadają. Internet bywa wolny. Serwer pogodowy może leżeć. Agent musi na to reagować — nie zawieszać się, nie zapętlać, nie generować kosztów API w nieskończoność.
+W Warsztacie 1 dodaliśmy narzędzia oparte o prawdziwe API (Open-Meteo, NBP, Nager.Date, Wikipedia). Prawdziwe API czasem nie odpowiadają. Internet bywa wolny. Serwer pogodowy może leżeć. Agent musi na to reagować — nie zawieszać się, nie zapętlać, nie generować kosztów API w nieskończoność.
 
 ## Co budujemy
 
 ### 1. Timeout i retry w narzędziach
 
 ```
-Zmodyfikuj WSZYSTKIE narzędzia które robią fetch() do zewnętrznych API:
+Zmodyfikuj WSZYSTKIE narzędzia z Warsztatu 1 które robią fetch()
+do zewnętrznych API:
 
 1. Dodaj timeout 5 sekund do każdego fetch:
    const controller = new AbortController()
@@ -27,7 +28,7 @@ Zmodyfikuj WSZYSTKIE narzędzia które robią fetch() do zewnętrznych API:
      // fetch...
    } catch (error) {
      if (error.name === 'AbortError') {
-       return { error: "Timeout — serwer nie odpowiedział w 5 sekund. 
+       return { error: "Timeout — serwer nie odpowiedział w 5 sekund.
                 Spróbuj ponownie." }
      }
      return { error: `Błąd połączenia: ${error.message}` }
@@ -35,12 +36,13 @@ Zmodyfikuj WSZYSTKIE narzędzia które robią fetch() do zewnętrznych API:
 
 3. Sprawdź status HTTP:
    if (!response.ok) {
-     return { error: `API zwróciło błąd ${response.status}. 
+     return { error: `API zwróciło błąd ${response.status}.
               Sprawdź parametry.` }
    }
 
-Dotyczy: getWeather, getExchangeRate, getHolidays, 
-searchWikipedia, readWebPage
+Dotyczy narzędzi z W1: getWeather, getExchangeRate, getHolidays,
+searchWikipedia
+Oraz z L3: readWebPage
 ```
 
 ### 2. Walidacja parametrów
@@ -50,30 +52,30 @@ Dodaj walidację do narzędzi:
 
 getWeather:
   - Jeśli city jest pusty → "Podaj nazwę miasta"
-  - Jeśli geocoding nie znajdzie miasta → "Nie znalazłem miasta [X]. 
+  - Jeśli geocoding nie znajdzie miasta → "Nie znalazłem miasta [X].
     Sprawdź pisownię."
 
 getExchangeRate:
-  - Jeśli currency nie jest 3-literowa → "Podaj 3-literowy kod waluty 
+  - Jeśli currency nie jest 3-literowa → "Podaj 3-literowy kod waluty
     (np. EUR, USD)"
-  - Jeśli NBP nie zna waluty → "Waluta [X] nie jest w tabeli NBP. 
+  - Jeśli NBP nie zna waluty → "Waluta [X] nie jest w tabeli NBP.
     Popularne: EUR, USD, GBP, CHF"
 
 getHolidays:
-  - Jeśli country nie jest 2-literowy → "Podaj 2-literowy kod kraju 
+  - Jeśli country nie jest 2-literowy → "Podaj 2-literowy kod kraju
     (np. PL, DE, US)"
-  - Jeśli API nie zna kraju → "Nie znalazłem świąt dla kraju [X]. 
+  - Jeśli API nie zna kraju → "Nie znalazłem świąt dla kraju [X].
     Popularne: PL, DE, US, GB, FR"
 
 calculator:
-  - Jeśli wyrażenie zawiera import, require, eval, process → 
+  - Jeśli wyrażenie zawiera import, require, eval, process →
     "Wyrażenie zawiera niedozwolone znaki"
   - Jeśli obliczenie się nie uda → "Nie mogę obliczyć: [wyrażenie]"
 ```
 
 ### 3. Panel bezpieczeństwa w interfejsie
 
-W `app/react/page.tsx` (i /travel, /agent):
+W `app/react/page.tsx` (i /travel):
 
 ```
 Dodaj pod czatem panel "Diagnostyka":
@@ -104,16 +106,16 @@ Jeśli narzędzie zwróciło błąd → pokaż alert:
 ### 4. System prompt z instrukcjami bezpieczeństwa
 
 ```
-Dodaj do KAŻDEGO system prompta (chat, react, travel):
+Dodaj do KAŻDEGO system prompta (react, travel):
 
 "## OBSŁUGA BŁĘDÓW:
 - Jeśli narzędzie zwróci błąd — NIE powtarzaj tego samego wywołania
 - Zamiast tego: poinformuj użytkownika i zaproponuj alternatywę
-- Przykład: jeśli pogoda nie działa → 'Nie udało się sprawdzić pogody 
+- Przykład: jeśli pogoda nie działa → 'Nie udało się sprawdzić pogody
   w X. Mogę poszukać w Google lub spróbować innego miasta.'
-- NIGDY nie wywołuj tego samego narzędzia z tymi samymi argumentami 
+- NIGDY nie wywołuj tego samego narzędzia z tymi samymi argumentami
   dwa razy z rzędu
-- Jeśli po 3 nieudanych próbach nie masz danych — powiedz wprost 
+- Jeśli po 3 nieudanych próbach nie masz danych — powiedz wprost
   czego brakuje"
 ```
 
